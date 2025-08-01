@@ -4,6 +4,11 @@ const imgImage49 = "/wifi logo.png";
 const imgImage57 = "/wifi logo.png";
 const imgImage62 = "/wifi logo.png";
 const imgImg20240306214130 = "/wifi logo.png";
+const Kognitive = "src/images/image.png";
+const citi = "src/images/citi.png";
+const cba = "src/images/cba.png";
+const emis = "src/images/emis.png";
+const self = "src/images/self.png";
 
 interface CaseStudyProps {
   title: string;
@@ -153,37 +158,34 @@ function CompactCaseStudyCard({
           />
           <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent"></div>
           <div className="absolute top-3 left-3">
-            <span className="glass-button px-2 py-1 text-xs text-primary rounded-full">
+            {/* <span className="glass-button px-2 py-1 text-xs text-primary rounded-full">
               {category}
-            </span>
+            </span> */}
           </div>
-          <div className="absolute bottom-3 right-3">
+          {/* <div className="absolute bottom-3 right-3">
             <div className="w-6 h-6 glass-card rounded-full flex items-center justify-center">
               <svg className="w-3 h-3 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
               </svg>
             </div>
-          </div>
+          </div> */}
         </div>
         
         <div className="p-5 flex-1 flex flex-col">
           <div className="mb-4">
-            <h3 className="font-semibold text-foreground mb-2 group-hover:text-primary transition-colors line-clamp-2">
+            <h3 className="font-semibold text-foreground mb-2 group-hover:text-primary transition-colors line-clamp-3">
               {title}
             </h3>
-            <p className="text-sm text-muted-foreground line-clamp-2">{description}</p>
+            <p className="text-sm text-muted-foreground line-clamp-4">{description}</p>
           </div>
           
           <div className="space-y-3 flex-1">
             <div className="glass-card p-3 rounded-lg">
-              <h4 className="font-medium text-foreground text-xs mb-1 uppercase tracking-wide">Challenge</h4>
-              <p className="text-xs text-muted-foreground line-clamp-2">{challenge}</p>
+              <h4 className="font-medium text-foreground text-xs mb-1 titlecase tracking-wide "><b>My Part</b></h4>
+              <p className="text-xs text-muted-foreground line-clamp-5"><ul>{challenge}</ul></p>
             </div>
             
-            <div className="glass-card p-3 rounded-lg">
-              <h4 className="font-medium text-foreground text-xs mb-1 uppercase tracking-wide">Solution</h4>
-              <p className="text-xs text-muted-foreground line-clamp-2">{solution}</p>
-            </div>
+          
           </div>
           
           <div className="space-y-3 mt-auto pt-4">
@@ -216,78 +218,75 @@ function CompactCaseStudyCard({
 export function CaseStudies() {
   const caseStudies = [
     {
-      title: "My Current Project - [Edit This!]",
+      title: "Streamlining the Sea: A UX Overhaul for Kognitive Cloud",
       category: "Featured Work",
-      description: "This space is waiting for your current project! Click to customize this featured card with your actual work, achievements, and the story behind your latest design challenge.",
-      challenge: "Replace this with your project's main challenge. What problem were you solving? What constraints made it interesting? What was at stake for users and the business?",
-      solution: "Share your unique approach here. What methodologies did you use? How did you navigate constraints? What made your solution special? Include your design process and key decisions.",
+      description: "Led a comprehensive UX redesign for Kognitive Cloud, enhancing user engagement and operational efficiency across their platform.Redesigned outdated workflows and screens into a usable, responsive interface based on customer needs.This revamp empowers maritime users—especially those using Starlink—to manage networks effortlessly in their day-to-day operations.",
+      challenge: "Users, especially in the maritime sector, struggled with an outdated UI that wasn’t optimized for modern workflows or hardware integrations like Starlink.",
+      solution: "I reimagined old screens from a user-centered perspective simplifying flows, applying consistent UI patterns, and ensuring accessibility across devices. I also introduced scalable components to support new feature rollouts.",
       impact: [
-        "Add your specific metrics here (e.g., '40% increase in user engagement')",
-        "Include user satisfaction improvements and feedback",
-        "Mention business impact, revenue, or conversion improvements",
-        "Add any awards, recognition, or team feedback"
+        "The result is a more intuitive, task-focused experience. Daily operations became faster and less error-prone, and feedback from maritime users showed a clear increase in satisfaction and adoption."
       ],
-      image: imgImg20240306214130,
+      image: Kognitive,
       tags: ["UX Strategy", "Design Systems", "User Research", "Leadership"],
       featured: true
     },
     {
-      title: "E-commerce Platform Redesign",
-      category: "Product Strategy",
-      description: "Led the complete redesign of a major e-commerce platform, focusing on mobile-first experience and conversion optimization.",
-      challenge: "High cart abandonment rates (78%) and poor mobile experience were significantly impacting revenue and user satisfaction.",
+      title: "Enterprise Banking Platform – LATAM Region",
+      category: "Banking",
+      description: "An internal platform used by bank staff in Latin America to manage customer data, transactions, and operational workflows.",
+      challenge:  "Translated wireframes into clean, responsive UI using design systems. Collaborated with design leads to deliver scalable and maintainable layouts.",
       solution: "Implemented a comprehensive user research program, redesigned the checkout flow, and created a mobile-first responsive design system.",
       impact: [
-        "45% increase in mobile conversion rates",
-        "60% reduction in cart abandonment",
-        "92% positive user feedback on new experience"
+        "Translated wireframes into clean, responsive UI using enterprise design systems.",
+        "Collaborated with design manager to implement and extend reusable components.",
+        "Ensured pixel-perfect handoffs for development and participated in daily agile ceremonies."
       ],
-      image: imgImage54,
-      tags: ["E-commerce", "Mobile UX", "Conversion"],
+      image: citi,
+      tags: ["Finance", "Mobile UX", "Conversion"],
       featured: false
     },
     {
-      title: "Healthcare App Innovation",
-      category: "Healthcare UX",
-      description: "Designed a comprehensive patient management system that simplified complex healthcare workflows while maintaining compliance.",
-      challenge: "Healthcare professionals needed to manage complex patient data while adhering to strict regulatory requirements and time constraints.",
+      title: "Retail Banking Dashboard – APAC Region",
+      category: "Banking",
+      description: "A dashboard solution for an APAC-based bank enabling customer account management, daily transactions, and service operations.",
+      challenge: "Worked under design leadership to deliver new screen flows. Reused and adapted UI components to ensure visual and functional consistency.",
       solution: "Created an intuitive interface with smart automation, role-based access, and streamlined workflows that reduced cognitive load.",
       impact: [
         "50% reduction in data entry time",
         "95% healthcare provider satisfaction",
         "Full HIPAA compliance achieved"
       ],
-      image: imgImage49,
-      tags: ["Healthcare", "Compliance", "Workflow"],
+      image: cba,
+      tags: ["Banking", "Design Guide", "Prototypes"],
       featured: false
     },
     {
-      title: "Financial Dashboard System",
-      category: "FinTech Design",
-      description: "Built an intelligent financial dashboard that made complex data accessible and actionable for different user personas.",
-      challenge: "Financial advisors and their clients needed to understand complex investment data and make informed decisions quickly.",
+      title: "Tamil Nadu EMIS Portal – School Education Platform",
+      category: "Education",
+      description: "A government portal that centralizes student, teacher, and school data across Tamil Nadu for administrative and academic management.",
+      challenge: "Revamped outdated screens to improve clarity and navigation. Worked closely with the team to follow government design standards and improve workflows.",
       solution: "Designed role-based dashboards with progressive disclosure, smart alerts, and personalized insights using advanced data visualization.",
       impact: [
         "40% faster decision-making process",
         "85% improvement in data comprehension",
         "Increased client engagement by 60%"
       ],
-      image: imgImage57,
-      tags: ["FinTech", "Data Viz", "Personalization"],
+      image: emis,
+      tags: ["Education", "Government", "User Research"],
       featured: false
     },
     {
-      title: "Learning Platform Experience",
-      category: "EdTech Innovation",
-      description: "Created an engaging learning platform that transformed online education through gamification and social learning features.",
-      challenge: "Online learners had low engagement rates (35% completion) and lacked motivation to continue their educational journey.",
+      title: "Self-Initiated Projects for Skill Growth",
+      category: "General",
+      description: "Conceptual UI/UX projects including portals, dashboards, and websites created to simulate real-world product scenarios",
+      challenge: "Practiced full design process from ideation to handoff. Focused on building solid UX foundations and consistency across diverse platforms.",
       solution: "Integrated gamification elements, peer learning features, and adaptive content delivery based on individual learning patterns.",
       impact: [
         "75% increase in course completion rates",
         "90% learner satisfaction improvement",
         "Featured in top EdTech innovations of 2023"
       ],
-      image: imgImage62,
+      image: self,
       tags: ["EdTech", "Gamification", "Social Learning"],
       featured: false
     }

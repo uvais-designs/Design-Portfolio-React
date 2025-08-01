@@ -2,11 +2,14 @@
 const imgProfile = "/wifi logo.png";
 const imgLinkedin = "/wifi logo.png";
 const imgBehance = "/wifi logo.png";
-const imgGmail = "/wifi logo.png";export function Contact() {
+const imgGmail = "/wifi logo.png";
+const uvais = "src/images/uvais.png";
+
+export function Contact() {
   const contactMethods = [
     {
       type: "Email",
-      value: "ysul2505@gmail.com",
+      value:"ysul2505@gmail.com",
       href: "mailto:ysul2505@gmail.com",
       icon: "📧",
     },
@@ -52,7 +55,7 @@ const imgGmail = "/wifi logo.png";export function Contact() {
               <div className="text-center">
               <div className="w-64 h-64 mx-auto mb-6 relative">
                 <img
-                  src={imgGmail}
+                  src={uvais}
                   alt="Uvais Khan"
                   className="w-full h-full object-cover rounded-2xl shadow-lg"
                 />

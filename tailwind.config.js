@@ -16,7 +16,7 @@ module.exports = {
         accent: "hsl(var(--color-accent))",
       },
       fontFamily: {
-        sans: ["Inter", "sans-serif"],
+        sans: ["poppins", "sans-serif"],
       },
     },
   },
