@@ -1,0 +1,70 @@
+
+export function WhyDesign() {
+  return (
+    <section className="py-16 px-4 container mx-auto">
+      <div className="max-w-6xl mx-auto">
+        <div className="relative bg-white rounded-3xl p-8 md:p-12 lg:p-16 border-4 border-black shadow-lg">
+          {/* Decorative elements */}
+          <div className="absolute -top-6 -left-6 w-16 h-16 bg-[#ffdc58] rounded-full border-2 border-black flex items-center justify-center">
+            <svg
+              className="w-8 h-8"
+              fill="none"
+              preserveAspectRatio="none"
+              viewBox="0 0 37 53"
+            >
+              <g id="Icon">
+                <path
+                  clipRule="evenodd"
+                  fill="var(--fill-0, #231F21)"
+                  fillRule="evenodd"
+                />
+              </g>
+            </svg>
+          </div>
+          
+          <div className="absolute top-4 right-4 hidden lg:block">
+            <svg
+              className="w-24 h-16 text-black"
+              fill="none"
+              preserveAspectRatio="none"
+              viewBox="0 0 67 56"
+            >
+              <path
+                stroke="currentColor"
+                strokeWidth="5"
+              />
+            </svg>
+          </div>
+
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+            <div>
+              <h2 className="font-['Space_Grotesk:Bold',_sans-serif] text-2xl md:text-3xl lg:text-4xl mb-6">
+                Why i choose design?
+              </h2>
+            </div>
+            
+            <div>
+              <p className="font-['Space_Grotesk:Regular',_sans-serif] text-base md:text-lg lg:text-xl leading-relaxed">
+                "I dream of becoming a director in IT. I love telling stories visually and making scenes that people will love. Even small details matter to me. Before I started designing directly, I learned about development to see things from both a tech and user perspective, drawing ideas from everyday life."
+              </p>
+            </div>
+          </div>
+
+          {/* Decorative plant */}
+          <div className="absolute bottom-4 right-4 w-24 h-32 hidden lg:block">
+            <svg
+              className="w-full h-full"
+              fill="none"
+              preserveAspectRatio="none"
+              viewBox="0 0 216 190"
+            >
+              <path 
+                fill="#3B8457" 
+              />
+            </svg>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
