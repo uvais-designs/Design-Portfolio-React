@@ -22,22 +22,23 @@ interface CaseStudyProps {
   featured?: boolean;
 }
 
-function FeaturedCaseStudyCard({ 
-  title, 
-  category, 
-  description, 
-  challenge, 
-  solution, 
-  impact, 
-  image, 
-  tags 
+function FeaturedCaseStudyCard({
+  title,
+  category,
+  description,
+  challenge,
+  solution,
+  impact,
+  image,
+  tags
 }: CaseStudyProps) {
   return (
-    <div className="group cursor-pointer mb-12">
+    <div className="group cursor-pointer mb-10">
       <div className="glass-card rounded-3xl overflow-hidden hover:scale-[1.02] transition-all duration-500 hover:shadow-2xl relative">
+
         {/* Floating badge */}
-        <div className="absolute -top-4 left-8 z-20">
-          <div className="glass-button px-4 py-2 rounded-full">
+        <div className="absolute -top-4 left-6 z-20">
+          <div className="glass-button px-3 py-1.5 rounded-full">
             <span className="text-sm font-medium text-primary flex items-center gap-2">
               <div className="w-2 h-2 bg-primary rounded-full animate-pulse"></div>
               Current Project
@@ -45,70 +46,86 @@ function FeaturedCaseStudyCard({
           </div>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-0">
-          <div className="relative h-80 lg:h-auto overflow-hidden">
+        {/* Layout */}
+        <div className="grid grid-rows-[auto_1fr]">
+          {/* Image Section */}
+          <div className="relative h-64 overflow-hidden">
             <img
               src={image}
               alt={title}
-              className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+              className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
             />
             <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
           </div>
-          
-          <div className="p-8 lg:p-12 flex flex-col justify-center relative">
-            {/* Personal touch */}
-            <div className="absolute top-6 right-6 opacity-30">
-              <div className="text-xs text-muted-foreground italic">
-                "My latest work"
-              </div>
+
+          {/* Content Section */}
+          <div className="p-6 flex flex-col justify-start relative space-y-6">
+            {/* Personal note */}
+            <div className="absolute top-4 right-4 opacity-30">
+              <div className="text-xs text-muted-foreground italic">"My latest work"</div>
             </div>
 
-            <div className="mb-8">
-              <span className="inline-block px-3 py-1 glass-button rounded-full text-sm text-primary mb-4">
-                {category}  
+            <div>
+              <span className="inline-block px-3 py-1 glass-button rounded-full text-sm text-primary mb-3">
+                {category}
               </span>
-              <h3 className="text-3xl lg:text-4xl font-bold text-foreground mb-4 group-hover:gradient-text transition-all duration-300">
+              <h3 className="text-2xl font-bold text-foreground mb-2 group-hover:gradient-text transition-all duration-300">
                 {title}
               </h3>
-              <p className="text-lg text-muted-foreground leading-relaxed">{description}</p>
+              <p className="text-base text-muted-foreground leading-relaxed">{description}</p>
             </div>
-            
-            <div className="space-y-6 mb-8">
-              <div className="glass-card p-4 rounded-xl">
+
+
+            <div className="flex flex-col md:flex-row gap-4">
+              {/* Challenge */}
+              <div className="flex-1 glass-card p-4 rounded-xl">
                 <h4 className="font-semibold text-foreground mb-2 flex items-center gap-2">
                   <div className="w-1 h-6 bg-primary rounded-full"></div>
                   The Challenge
                 </h4>
-                <p className="text-muted-foreground">{challenge}</p>
+                <p className="text-muted-foreground text-sm">{challenge}</p>
               </div>
-              
-              <div className="glass-card p-4 rounded-xl">
+
+              {/* My Approach */}
+              <div className="flex-1 glass-card p-4 rounded-xl">
                 <h4 className="font-semibold text-foreground mb-2 flex items-center gap-2">
                   <div className="w-1 h-6 bg-chart-2 rounded-full"></div>
                   My Approach
                 </h4>
-                <p className="text-muted-foreground">{solution}</p>
+                <p className="text-muted-foreground text-sm">{solution}</p>
               </div>
-              
-              {impact.length > 0 && (
-                <div className="glass-card p-4 rounded-xl">
+
+              {/* My Approach */}
+              {/* <div className="flex-1 glass-card p-4 rounded-xl">
+                <h4 className="font-semibold text-foreground mb-2 flex items-center gap-2">
+                  <div className="w-1 h-6 bg-chart-2 rounded-full"></div>
+                  Impacts
+                </h4>
+                <p className="text-muted-foreground text-sm">{results}</p>
+              </div> */}
+
+              {/* Impact */}
+              {/* {impact.length > 0 && (
+                <div className="flex-1 glass-card p-4 rounded-xl">
                   <h4 className="font-semibold text-foreground mb-3 flex items-center gap-2">
                     <div className="w-1 h-6 bg-chart-5 rounded-full"></div>
                     Impact & Results
                   </h4>
                   <ul className="space-y-2">
                     {impact.map((item, index) => (
-                      <li key={index} className="text-muted-foreground flex items-start gap-3">
-                        <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0 animate-pulse"></div>
+                      <li key={index} className="text-muted-foreground text-sm flex items-start gap-3">
+                        <div className="w-2 h-2 bg-primary rounded-full mt-1 flex-shrink-0 animate-pulse"></div>
                         {item}
                       </li>
                     ))}
                   </ul>
                 </div>
-              )}
+              )} */}
             </div>
-            
-            <div className="space-y-6">
+
+
+            {/* Tags & CTA */}
+            <div className="space-y-4">
               <div className="flex flex-wrap gap-2">
                 {tags.map((tag, index) => (
                   <span
@@ -119,8 +136,8 @@ function FeaturedCaseStudyCard({
                   </span>
                 ))}
               </div>
-              
-              <button className="glass-button px-8 py-4 rounded-full text-primary hover:text-primary-foreground group/btn relative overflow-hidden transition-all duration-300 hover:scale-105">
+
+              <button className="glass-button px-6 py-3 rounded-full text-primary hover:text-primary-foreground group/btn relative overflow-hidden transition-all duration-300 hover:scale-105">
                 <span className="relative z-10 flex items-center gap-2">
                   Explore This Project
                   <svg className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -137,15 +154,16 @@ function FeaturedCaseStudyCard({
   );
 }
 
-function CompactCaseStudyCard({ 
-  title, 
-  category, 
-  description, 
-  challenge, 
-  solution, 
-  impact, 
-  image, 
-  tags 
+
+function CompactCaseStudyCard({
+  title,
+  category,
+  description,
+  challenge,
+  solution,
+  impact,
+  image,
+  tags
 }: CaseStudyProps) {
   return (
     <div className="group cursor-pointer">
@@ -170,7 +188,7 @@ function CompactCaseStudyCard({
             </div>
           </div> */}
         </div>
-        
+
         <div className="p-5 flex-1 flex flex-col">
           <div className="mb-4">
             <h3 className="font-semibold text-foreground mb-2 group-hover:text-primary transition-colors line-clamp-3">
@@ -178,16 +196,16 @@ function CompactCaseStudyCard({
             </h3>
             <p className="text-sm text-muted-foreground line-clamp-4">{description}</p>
           </div>
-          
+
           <div className="space-y-3 flex-1">
             <div className="glass-card p-3 rounded-lg">
               <h4 className="font-medium text-foreground text-xs mb-1 titlecase tracking-wide "><b>My Part</b></h4>
               <p className="text-xs text-muted-foreground line-clamp-5"><ul>{challenge}</ul></p>
             </div>
-            
-          
+
+
           </div>
-          
+
           <div className="space-y-3 mt-auto pt-4">
             <div className="flex flex-wrap gap-1">
               {tags.slice(0, 3).map((tag, index) => (
@@ -204,7 +222,7 @@ function CompactCaseStudyCard({
                 </span>
               )}
             </div>
-            
+
             <button className="w-full glass-button py-2 rounded-lg text-primary text-xs font-medium hover:scale-105 transition-all duration-200">
               View Project
             </button>
@@ -223,6 +241,7 @@ export function CaseStudies() {
       description: "Led a comprehensive UX redesign for Kognitive Cloud, enhancing user engagement and operational efficiency across their platform.Redesigned outdated workflows and screens into a usable, responsive interface based on customer needs.This revamp empowers maritime users—especially those using Starlink—to manage networks effortlessly in their day-to-day operations.",
       challenge: "Users, especially in the maritime sector, struggled with an outdated UI that wasn’t optimized for modern workflows or hardware integrations like Starlink.",
       solution: "I reimagined old screens from a user-centered perspective simplifying flows, applying consistent UI patterns, and ensuring accessibility across devices. I also introduced scalable components to support new feature rollouts.",
+      results: "The result is a more intuitive, task-focused experience. Daily operations became faster and less error-prone, and feedback from maritime users showed a clear increase in satisfaction and adoption.",
       impact: [
         "The result is a more intuitive, task-focused experience. Daily operations became faster and less error-prone, and feedback from maritime users showed a clear increase in satisfaction and adoption."
       ],
@@ -234,7 +253,7 @@ export function CaseStudies() {
       title: "Enterprise Banking Platform – LATAM Region",
       category: "Banking",
       description: "An internal platform used by bank staff in Latin America to manage customer data, transactions, and operational workflows.",
-      challenge:  "Translated wireframes into clean, responsive UI using design systems. Collaborated with design leads to deliver scalable and maintainable layouts.",
+      challenge: "Translated wireframes into clean, responsive UI using design systems. Collaborated with design leads to deliver scalable and maintainable layouts.",
       solution: "Implemented a comprehensive user research program, redesigned the checkout flow, and created a mobile-first responsive design system.",
       impact: [
         "Translated wireframes into clean, responsive UI using enterprise design systems.",
@@ -296,15 +315,12 @@ export function CaseStudies() {
   const otherProjects = caseStudies.filter(study => !study.featured);
 
   return (
-    <section id="case-studies" className="py-20 relative">
+    <section id="projects" className="py-20 relative">
       {/* Background gradient */}
       <div className="absolute inset-0 bg-gradient-to-b from-background via-muted/20 to-background"></div>
-      
+
       <div className="container mx-auto px-4 relative z-10">
         <div className="text-center mb-16">
-          <div className="glass-card inline-block px-4 py-2 rounded-full mb-6">
-            <span className="text-sm text-muted-foreground">💼 My Work</span>
-          </div>
           <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
             Design Stories & Solutions
           </h2>
@@ -333,7 +349,7 @@ export function CaseStudies() {
             <h3 className="text-2xl font-semibold text-foreground mb-2">More Projects</h3>
             <p className="text-muted-foreground">A selection of impactful design solutions</p>
           </div>
-          
+
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {otherProjects.map((study, index) => (
               <div key={index} className="opacity-0 animate-fade-in-up" style={{ animationDelay: `${index * 0.1}s`, animationFillMode: 'forwards' }}>

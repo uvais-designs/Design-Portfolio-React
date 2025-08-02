@@ -29,9 +29,9 @@ export function Leadership() {
       description: "Successfully shipped products across industries"
     },
     {
-      metric: "3",
-      label: "Teams Led",
-      description: "Built and mentored high-performing design teams"
+      metric: "4+",
+      label: "Teams",
+      description: "Worked with diverse teams in startups and enterprises"
     },
     {
       metric: "100K+",
@@ -46,7 +46,7 @@ export function Leadership() {
   ];
 
   return (
-    <section id="leadership" className="py-20 px-6">
+    <section  className="py-20 px-6">
       <div className="container mx-auto max-w-6xl">
         <div className="text-center mb-16">
           <h2 className="heading-large text-foreground mb-4">Design Leadership Philosophy</h2>
@@ -72,7 +72,7 @@ export function Leadership() {
         </div>
 
         {/* Quote Section */}
-        <div className="bg-primary/5 border border-primary/20 rounded-2xl p-8 md:p-12 mb-20">
+        <div id="about" className="bg-primary/5 border border-primary/20 rounded-2xl p-8 md:p-12 mb-20">
           <div className="max-w-4xl mx-auto text-center">
             <blockquote className="text-xl md:text-2xl text-foreground mb-6 leading-relaxed">
               "I dream of becoming a director in IT who leads through design thinking. 

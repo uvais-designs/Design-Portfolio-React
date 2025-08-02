@@ -5,13 +5,13 @@ import { Navigation } from "./components/Navigation";
 import { Hero } from "./components/Hero";
 import { About } from "./components/About";
 import { Experience } from "./components/Experience";
-// import { ExperienceItem } from "./components/WorkExperience";
+import { Education } from "./components/Education";
 import { CaseStudies } from "./components/CaseStudies";
 import { Leadership } from "./components/Leadership";
 import { Contact } from "./components/Contact";
 
 export default function App() {
-  const [isLoading, setIsLoading] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
   const [showContent, setShowContent] = useState(true);
 
   //change this to true to show the loader
@@ -65,7 +65,7 @@ export default function App() {
               {/* <About /> */}
               <CaseStudies />
               <Experience />
-              {/* <ExperienceItem /> */}
+              <Education />
               <Leadership />
               <Contact />
             </main>

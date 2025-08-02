@@ -8,26 +8,32 @@ export function Loader({ onComplete }: LoaderProps) {
   const [progress, setProgress] = useState(0);
   const [phase, setPhase] = useState('loading'); // loading, transitioning, complete
 
-  useEffect(() => {
-    // Simulate loading progress
-    const progressInterval = setInterval(() => {
-      setProgress(prev => {
-        if (prev >= 100) {
-          clearInterval(progressInterval);
-          setPhase('transitioning');
-          // Start transition after a brief pause
-          setTimeout(() => {
-            setPhase('complete');
-            setTimeout(onComplete, 800); // Allow time for logo to move
-          }, 500);
-          return 100;
-        }
-        return prev + Math.random() * 15;
-      });
-    }, 150);
+useEffect(() => {
+  const progressInterval = setInterval(() => {
+    setProgress(prev => {
+      const next = Math.min(prev + Math.random() * 20, 100);
+      if (next >= 100) {
+        clearInterval(progressInterval);
+        setPhase('transitioning');
 
-    return () => clearInterval(progressInterval);
-  }, [onComplete]);
+        // Delay phase change and onComplete for clean transitions
+        setTimeout(() => {
+          setPhase('complete');
+        }, 800); // Allow logo animation to complete
+
+        setTimeout(() => {
+          onComplete(); // Unmount after fade-out
+        }, 1200); // Slightly after 'complete' phase
+
+        return 100;
+      }
+      return next;
+    });
+  }, 150);
+
+  return () => clearInterval(progressInterval);
+}, [onComplete]);
+
 
   return (
     <div className={`fixed inset-0 z-50 transition-all duration-1000 ${
@@ -45,25 +51,26 @@ export function Loader({ onComplete }: LoaderProps) {
       <div className="relative h-full flex items-center justify-center">
         <div className="text-center space-y-8">
           {/* Animated Logo */}
-          <div className={`transition-all duration-1000 ease-out ${
-            phase === 'complete' 
-              ? 'fixed top-4 left-4 scale-50 translate-x-0 translate-y-0' 
-              : 'scale-100'
-          }`}>
+          <div>
             <div className="relative">
               {/* Liquid glass logo container */}
               <div className="w-24 h-24 mx-auto mb-6 relative">
-                <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-primary/20 to-accent/20 backdrop-blur-xl border border-white/20 shadow-2xl">
+                <div className="">
                   <div className="absolute inset-2 rounded-xl bg-gradient-to-br from-primary/30 to-transparent backdrop-blur-sm"></div>
                 </div>
                 
                 {/* Logo content */}
                 <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="relative">
-                    <div className="text-2xl font-bold text-primary relative z-10">UK</div>
+                  <div>
+                    {/* <div className="text-2xl font-bold text-primary relative z-10">UK</div> */}
+                      <img
+              src="src/images/uk logo.svg"
+              alt="UK"
+              className="w-24 h-24 object-contain"
+            />
                     {/* Animated ring */}
-                    <div className="absolute inset-0 rounded-full border-2 border-primary/30 animate-spin-slow scale-150"></div>
-                    <div className="absolute inset-0 rounded-full border border-primary/50 animate-pulse scale-125"></div>
+                    {/* <div className="absolute inset-0 rounded-full border-2 border-primary/30 animate-spin-slow scale-150"></div>
+                    <div className="absolute inset-0 rounded-full border border-primary/50 animate-pulse scale-125"></div> */}
                   </div>
                 </div>
               </div>

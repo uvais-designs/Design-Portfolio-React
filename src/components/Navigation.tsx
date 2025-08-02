@@ -1,4 +1,6 @@
 import { useState, useEffect } from "react";
+const logo = "src/images/uk logo.png";
+
 
 interface NavItem {
   href: string;
@@ -52,32 +54,34 @@ export function Navigation() {
     { href: "#about", label: "About" },
     { href: "#experience", label: "Experience" },
     { href: "#projects", label: "Projects" },
-    { href: "#contact", label: "Contact" }
   ];
 
   return (
-    <nav 
-      className={`sticky top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled 
-          ? 'glass-nav shadow-lg border-b border-white/10 backdrop-blur-md' 
-          : 'bg-background/50 backdrop-blur-sm'
-      }`}
-    >
-      <div 
-        className={`container mx-auto px-4 flex items-center justify-between transition-all duration-300 ${
-          isScrolled ? 'py-3' : 'py-4'
+    <nav
+      className={`sticky top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled
+        ? 'glass-nav shadow-lg border-b border-white/10 backdrop-blur-md'
+        : 'bg-background/50 backdrop-blur-sm'
         }`}
+    >
+      <div
+        className={`container mx-auto px-4 flex items-center justify-between transition-all duration-300 ${isScrolled ? 'py-3' : 'py-4'
+          }`}
       >
         {/* Logo */}
         <a href="#home" className="w-16 h-12 flex items-center">
-          <div 
+          <div
             className={`w-8 h-8 rounded-lg bg-gradient-to-br from-primary/20 to-accent/20 backdrop-blur-xl 
-              border border-white/20 flex items-center justify-center transition-all duration-300 
-              ${isScrolled ? 'scale-90' : 'scale-100'}`}
+      border border-white/20 flex items-center justify-center transition-all duration-300 
+      ${isScrolled ? 'scale-90' : 'scale-100'}`}
           >
-            <span className="text-sm font-bold text-primary">UK</span>
+            <img
+              src="src/images/uk logo.svg"
+              alt="UK"
+              className="w-12 h-12 object-contain"
+            />
           </div>
         </a>
+
 
         {/* Desktop Navigation */}
         <div className="hidden md:flex items-center space-x-1">
@@ -86,8 +90,8 @@ export function Navigation() {
               key={item.href}
               href={item.href}
               className={`relative px-4 py-2 text-sm font-medium transition-all duration-300 group
-                ${activeSection === item.href.slice(1) 
-                  ? 'text-primary' 
+                ${activeSection === item.href.slice(1)
+                  ? 'text-primary'
                   : 'text-foreground/80 hover:text-primary'
                 }
                 ${isScrolled ? 'py-1.5' : 'py-2'}
@@ -133,7 +137,7 @@ export function Navigation() {
       </div>
 
       {/* Mobile Menu */}
-      <div 
+      <div
         className={`md:hidden border-t border-white/10 transition-all duration-300 
           ${isMobileMenuOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0 overflow-hidden'}`}
       >

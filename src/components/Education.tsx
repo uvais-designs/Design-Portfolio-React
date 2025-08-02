@@ -2,52 +2,49 @@ export function Education() {
   const educationData = [
     {
       institution: "DSEC - Dhanalakshmi Srinivasan Engineering College",
-      degree: "CSE",
-      duration: "June 2016 - March 2020, Perambalur, Tamilnadu",
+      degree: "B.E. Computer Science & Engineering",
+      duration: "June 2016 – March 2020 · Perambalur, Tamil Nadu",
       percentage: "66%",
     },
     {
-      institution: "V.E.T Higher Secondary School",
-      degree: "HSC",
-      duration: "June 2014 - April 2016, Virudhachalam, Tamilnadu",
+      institution: "V.E.T Higher Secondary School, VDM",
+      degree: "Higher Secondary (HSC)",
+      duration: "June 2014 – April 2016 · Virudhachalam, Tamil Nadu",
       percentage: "73%",
     },
     {
-      institution: "Fatima Matriculation Higher Secondary School",
+      institution: "Fatima Matriculation Higher Secondary School, VDM",
       degree: "SSLC",
-      duration: "June 2013 - April 2014, Virudhachalam, Tamilnadu",
+      duration: "June 2013 – April 2014 · Virudhachalam, Tamil Nadu",
       percentage: "91%",
     },
   ];
 
   return (
-    <section className="py-16 px-4 container mx-auto">
-      <h2 className="font-['Poppins:Bold',_sans-serif] text-3xl md:text-4xl lg:text-5xl text-center mb-16">
-        Education
-      </h2>
-      
-      <div className="max-w-4xl mx-auto">
-        <div className="backdrop-blur-sm bg-white/80 rounded-3xl p-8 md:p-12 space-y-8">
-          {educationData.map((education, index) => (
-            <div key={index} className="space-y-2">
-              <h3 className="font-['Space_Grotesk:Regular',_sans-serif] text-lg md:text-xl lg:text-2xl">
-                <span>{education.institution} / </span>
-                <span className="font-['Space_Grotesk:Bold',_sans-serif]">{education.degree}</span>
-              </h3>
-              <p className="font-['Space_Grotesk:Regular',_sans-serif] text-base md:text-lg">
-                {education.duration}
-              </p>
-              <p className="font-['Space_Grotesk:Bold',_sans-serif] text-base md:text-lg">
-                {education.percentage}
-              </p>
-              {index < educationData.length - 1 && (
-                <div className="pt-4">
-                  <div className="border-b border-gray-300"></div>
-                </div>
-              )}
+    <section id="education" className="py-20 px-4 bg-secondary/10">
+      <div className="max-w-5xl mx-auto text-center mb-12">
+        <h2 className="text-4xl font-bold text-foreground mb-4">Education</h2>
+        <p className="text-muted-foreground text-lg">
+          A quick look at my academic journey
+        </p>
+      </div>
+
+      <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-6">
+        {educationData.map((edu, index) => (
+          <div
+            key={index}
+            className="rounded-xl bg-card p-6 shadow-md border hover:shadow-xl transition-all duration-300 text-left"
+          >
+            <h3 className="text-lg font-semibold text-foreground mb-1">
+              {edu.institution}
+            </h3>
+            <div className="text-primary font-medium mb-2">{edu.degree}</div>
+            <div className="text-muted-foreground mb-1">{edu.duration}</div>
+            <div className="text-sm text-foreground font-bold">
+              Scored: <span className="text-green-600">{edu.percentage}</span>
             </div>
-          ))}
-        </div>
+          </div>
+        ))}
       </div>
     </section>
   );
