@@ -1,7 +1,7 @@
 {
   "name": "responsive-personal-portfolio",
   "version": "1.0.0",
-  "homepage": "https://uvais-designs.github.io/Design-Portfolio-React",
+  "homepage": "https://uvais-designs.github.io/uvais",
   "private": true,
   "scripts": {
     "dev": "vite",
