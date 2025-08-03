@@ -38,13 +38,13 @@ export function WhyDesign() {
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
             <div>
-              <h2 className="font-['Space_Grotesk:Bold',_sans-serif] text-2xl md:text-3xl lg:text-4xl mb-6">
+              <h2 className="text-2xl md:text-3xl lg:text-4xl mb-6">
                 Why i choose design?
               </h2>
             </div>
             
             <div>
-              <p className="font-['Space_Grotesk:Regular',_sans-serif] text-base md:text-lg lg:text-xl leading-relaxed">
+              <p className="text-base md:text-lg lg:text-xl leading-relaxed">
                 "I dream of becoming a director in IT. I love telling stories visually and making scenes that people will love. Even small details matter to me. Before I started designing directly, I learned about development to see things from both a tech and user perspective, drawing ideas from everyday life."
               </p>
             </div>

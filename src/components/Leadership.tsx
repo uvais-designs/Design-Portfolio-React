@@ -71,23 +71,6 @@ export function Leadership() {
           ))}
         </div>
 
-        {/* Quote Section */}
-        <div id="about" className="bg-primary/5 border border-primary/20 rounded-2xl p-8 md:p-12 mb-20">
-          <div className="max-w-4xl mx-auto text-center">
-            <blockquote className="text-xl md:text-2xl text-foreground mb-6 leading-relaxed">
-              "I dream of becoming a director in IT who leads through design thinking. 
-              I believe in the power of visual storytelling and creating experiences that 
-              people will love. Every detail matters, and I approach challenges from both 
-              technical and human perspectives."
-            </blockquote>
-            <div className="flex items-center justify-center space-x-4">
-              <div className="w-12 h-px bg-primary"></div>
-              <span className="text-muted-foreground font-medium">Design Philosophy</span>
-              <div className="w-12 h-px bg-primary"></div>
-            </div>
-          </div>
-        </div>
-
         {/* Achievements Grid */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
           {achievements.map((achievement, index) => (

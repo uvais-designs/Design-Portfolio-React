@@ -88,35 +88,7 @@ function FeaturedCaseStudyCard({
                 </h4>
                 <p className="text-muted-foreground text-sm">{solution}</p>
               </div>
-
-              {/* My Approach */}
-              {/* <div className="flex-1 glass-card p-4 rounded-xl">
-                <h4 className="font-semibold text-foreground mb-2 flex items-center gap-2">
-                  <div className="w-1 h-6 bg-chart-2 rounded-full"></div>
-                  Impacts
-                </h4>
-                <p className="text-muted-foreground text-sm">{results}</p>
-              </div> */}
-
-              {/* Impact */}
-              {/* {impact.length > 0 && (
-                <div className="flex-1 glass-card p-4 rounded-xl">
-                  <h4 className="font-semibold text-foreground mb-3 flex items-center gap-2">
-                    <div className="w-1 h-6 bg-chart-5 rounded-full"></div>
-                    Impact & Results
-                  </h4>
-                  <ul className="space-y-2">
-                    {impact.map((item, index) => (
-                      <li key={index} className="text-muted-foreground text-sm flex items-start gap-3">
-                        <div className="w-2 h-2 bg-primary rounded-full mt-1 flex-shrink-0 animate-pulse"></div>
-                        {item}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              )} */}
             </div>
-
 
             {/* Tags & CTA */}
             <div className="space-y-4">
@@ -170,17 +142,7 @@ function CompactCaseStudyCard({
           />
           <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent"></div>
           <div className="absolute top-3 left-3">
-            {/* <span className="glass-button px-2 py-1 text-xs text-primary rounded-full">
-              {category}
-            </span> */}
           </div>
-          {/* <div className="absolute bottom-3 right-3">
-            <div className="w-6 h-6 glass-card rounded-full flex items-center justify-center">
-              <svg className="w-3 h-3 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-              </svg>
-            </div>
-          </div> */}
         </div>
 
         <div className="p-5 flex-1 flex flex-col">

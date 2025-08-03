@@ -29,10 +29,6 @@ export function Hero() {
         <div className="max-w-4xl mx-auto space-y-8">
           {/* Personal greeting */}
           <div className="space-y-6">
-            {/* <div className="glass-card inline-block px-4 py-2 rounded-full mb-6 opacity-0 animate-fade-in-up" style={{ animationDelay: '0.2s', animationFillMode: 'forwards' }}>
-              <span className="text-sm text-muted-foreground">Hello, I'm</span>
-            </div> */}
-
             <h1 className="heading-display gradient-text opacity-0 animate-fade-in-up" style={{ animationDelay: '0.4s', animationFillMode: 'forwards' }}>
               Uvaisul Karni Sheik
             </h1>

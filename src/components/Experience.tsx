@@ -12,7 +12,7 @@ function ExperienceItem({ role, company, period, description }: ExperienceItemPr
       {/* Gradient overlay */}
       <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-accent/5 opacity-0 
         transition-opacity group-hover:opacity-100" />
-      
+
       {/* Content */}
       <div className="relative space-y-4">
         <div>
@@ -22,20 +22,7 @@ function ExperienceItem({ role, company, period, description }: ExperienceItemPr
           <h5 className="text-m font-bold tracking-tight text-foreground group-hover:text-primary 
             transition-colors">{period}</h5>
         </div>
-        
         <p className="text-muted-foreground text-sm leading-relaxed">{description}</p>
-
-        {/* <div className="flex flex-wrap gap-2 pt-2">
-          {tags.map((tag, index) => (
-            <span
-              key={index}
-              className="inline-flex items-center rounded-full bg-accent/30 px-2.5 py-0.5 text-xs 
-                font-medium text-primary transition-colors hover:bg-accent/50"
-            >
-              {tag}
-            </span>
-          ))}
-        </div> */}
       </div>
     </div>
   );
@@ -63,7 +50,7 @@ export function Experience() {
     },
     {
       role: "UX Designer/Dev",
-      company: "Startup",
+      company: "Szigony Technologies",
       period: "2020 - 2021",
       description: "Designed e-commerce products for customers.",
     }

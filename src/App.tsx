@@ -3,12 +3,12 @@ import { useState, useEffect } from "react";
 import { Loader } from "./components/Loader";
 import { Navigation } from "./components/Navigation";
 import { Hero } from "./components/Hero";
-import { About } from "./components/About";
 import { Experience } from "./components/Experience";
 import { Education } from "./components/Education";
 import { CaseStudies } from "./components/CaseStudies";
 import { Leadership } from "./components/Leadership";
 import { Contact } from "./components/Contact";
+import { WhyDesign } from "./components/WhyDesign";
 
 export default function App() {
   const [isLoading, setIsLoading] = useState(true);
@@ -62,11 +62,11 @@ export default function App() {
             <Navigation />
             <main className="relative z-10">
               <Hero />
-              {/* <About /> */}
               <CaseStudies />
               <Experience />
               <Education />
               <Leadership />
+              <WhyDesign />
               <Contact />
             </main>
             

@@ -3,7 +3,7 @@ import {
   FaBehance,
   FaEnvelope,
   FaPhone,
-  FaMapMarkerAlt,
+  FaWhatsapp,
 } from "react-icons/fa";
 
 export function Contact() {
@@ -30,13 +30,13 @@ export function Contact() {
       href: "tel:+918344875844",
       label: "Phone",
       icon: <FaPhone />,
-      hoverColor: "hover:text-green-500", // Call Green
+      hoverColor: "hover:text-gray-500", // Call Green
     },
     {
-      href: "#",
-      label: "Location",
-      icon: <FaMapMarkerAlt />,
-      hoverColor: "hover:text-rose-500", // Location Pink
+      href: "https://api.whatsapp.com/send?phone=918344875844&text=Hi,%20Are%20you%20available%20for%20a%20quick%20chat%20regarding%20",
+      label: "Phone",
+      icon: <FaWhatsapp />,
+      hoverColor: "hover:text-green-500", // Call Green
     },
   ];
 
