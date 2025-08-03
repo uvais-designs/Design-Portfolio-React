@@ -64,7 +64,7 @@ useEffect(() => {
                   <div>
                     {/* <div className="text-2xl font-bold text-primary relative z-10">UK</div> */}
                       <img
-              src="public/images/uklogo.svg"
+              src="/images/uklogo.svg"
               alt="UK"
               className="w-24 h-24 object-contain"
             />

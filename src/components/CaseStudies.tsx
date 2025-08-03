@@ -1,8 +1,8 @@
-const Kognitive = "public/images/image.png";
-const citi = "public/images/citi.png";
-const cba = "public/images/cba.png";
-const emis = "public/images/emis.png";
-const self = "public/images/self.png";
+const Kognitive = "/images/image.png";
+const citi = "/images/citi.png";
+const cba = "/images/cba.png";
+const emis = "/images/emis.png";
+const self = "/images/self.png";
 
 interface CaseStudyProps {
   title: string;
