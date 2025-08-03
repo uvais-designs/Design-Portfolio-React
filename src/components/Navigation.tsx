@@ -1,5 +1,4 @@
 import { useState, useEffect } from "react";
-const logo = "src/images/uk logo.png";
 
 
 interface NavItem {
@@ -75,7 +74,7 @@ export function Navigation() {
       ${isScrolled ? 'scale-90' : 'scale-100'}`}
           >
             <img
-              src="src/images/uk logo.svg"
+              src="public/images/uklogo.svg"
               alt="UK"
               className="w-12 h-12 object-contain"
             />

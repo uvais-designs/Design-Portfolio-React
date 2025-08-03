@@ -1,14 +1,8 @@
-
-const imgImage54 = "/wifi logo.png";
-const imgImage49 = "/wifi logo.png";
-const imgImage57 = "/wifi logo.png";
-const imgImage62 = "/wifi logo.png";
-const imgImg20240306214130 = "/wifi logo.png";
-const Kognitive = "src/images/image.png";
-const citi = "src/images/citi.png";
-const cba = "src/images/cba.png";
-const emis = "src/images/emis.png";
-const self = "src/images/self.png";
+const Kognitive = "public/images/image.png";
+const citi = "public/images/citi.png";
+const cba = "public/images/cba.png";
+const emis = "public/images/emis.png";
+const self = "public/images/self.png";
 
 interface CaseStudyProps {
   title: string;
