@@ -73,6 +73,7 @@ export default function App() {
                 showUserInfo={true}
                 enableTilt={true}
                 enableMobileTilt={true}
+                mobileTiltSensitivity={2}
                 onContactClick={() => {
                   const contactSection = document.querySelector('#contact');
                   if (contactSection) {

@@ -236,26 +236,40 @@ const ProfileCardComponent: React.FC<ProfileCardProps> = ({
     const pointerLeaveHandler = handlePointerLeave as EventListener;
     const deviceOrientationHandler = handleDeviceOrientation as EventListener;
 
-    const handleClick = () => {
-      if (!enableMobileTilt || location.protocol !== 'https:') return;
-      if (typeof (window.DeviceMotionEvent as any).requestPermission === 'function') {
-        (window.DeviceMotionEvent as any)
-          .requestPermission()
-          .then((state: string) => {
-            if (state === 'granted') {
-              window.addEventListener('deviceorientation', deviceOrientationHandler);
-            }
-          })
-          .catch((err: any) => console.error(err));
-      } else {
-        window.addEventListener('deviceorientation', deviceOrientationHandler);
-      }
-    };
+   
+
+    const handleDeviceMotion = () => {
+  if (!enableMobileTilt) return;
+
+  // ✅ Safe check for iOS-only method
+  if (
+    typeof DeviceOrientationEvent !== "undefined" &&
+    typeof (DeviceOrientationEvent as any).requestPermission === "function"
+  ) {
+    (DeviceOrientationEvent as any)
+      .requestPermission()
+      .then((state: string) => {
+        if (state === "granted") {
+          window.addEventListener(
+            "deviceorientation",
+            deviceOrientationHandler
+          );
+        }
+      })
+      .catch((err: any) => console.error(err));
+  } else {
+    // ✅ All non-iOS devices
+    window.addEventListener("deviceorientation", deviceOrientationHandler);
+  }
+};
+
+
+    // Try to initialize device orientation immediately
+    handleDeviceMotion();
 
     card.addEventListener("pointerenter", pointerEnterHandler);
     card.addEventListener("pointermove", pointerMoveHandler);
     card.addEventListener("pointerleave", pointerLeaveHandler);
-    card.addEventListener('click', handleClick);
 
     const initialX = wrap.clientWidth - ANIMATION_CONFIG.INITIAL_X_OFFSET;
     const initialY = ANIMATION_CONFIG.INITIAL_Y_OFFSET;
@@ -273,7 +287,6 @@ const ProfileCardComponent: React.FC<ProfileCardProps> = ({
       card.removeEventListener("pointerenter", pointerEnterHandler);
       card.removeEventListener("pointermove", pointerMoveHandler);
       card.removeEventListener("pointerleave", pointerLeaveHandler);
-      card.removeEventListener('click', handleClick);
       window.removeEventListener('deviceorientation', deviceOrientationHandler);
       animationHandlers.cancelAnimation();
     };
@@ -305,7 +318,7 @@ const ProfileCardComponent: React.FC<ProfileCardProps> = ({
   }, [onContactClick]);
 
   return (
-    <section className="py-20 px-4 flex items-center justify-center w-full">
+    <section className="p-[25px] flex items-center justify-center w-full min-h-screen">
     <div
       ref={wrapRef}
       className={`pc-card-wrapper ${className}`.trim()}
