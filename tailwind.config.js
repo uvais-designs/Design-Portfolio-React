@@ -18,6 +18,15 @@ module.exports = {
       fontFamily: {
         sans: ["poppins", "sans-serif"],
       },
+      keyframes: {
+        move: {
+          '0%': { backgroundPosition: '0 0' },
+          '100%': { backgroundPosition: '20px 0' },
+        },
+      },
+      animation: {
+        'move': 'move 1s linear infinite',
+      },
     },
   },
   plugins: [

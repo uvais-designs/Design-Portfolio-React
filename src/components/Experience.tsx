@@ -38,13 +38,13 @@ export function Experience() {
     },
     {
       role: "UX Designer",
-      company: "TCS",
+      company: "Tata Consultancy Services",
       period: "2023 - 2025",
-      description: "designed for diffrent banking clients, improving UX by 35%.",
+      description: "Designed for diffrent banking clients, improving UX by 35%.",
     },
     {
       role: "UX Designer/Dev",
-      company: "Xenovex",
+      company: "Xenovex Technologies",
       period: "2021 - 2023",
       description: "Designed government education platform for 100k+ users.",
     },
