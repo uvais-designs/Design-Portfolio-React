@@ -63,7 +63,7 @@ export function Loader({ onComplete }: LoaderProps) {
                   <div>
                     {/* <div className="text-2xl font-bold text-primary relative z-10">UK</div> */}
                     <img
-                      src="/images/uklogo.svg"
+                      src="images/uklogo.svg"
                       alt="UK"
                       className="w-24 h-24 object-contain"
                     /></div>

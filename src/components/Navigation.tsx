@@ -74,7 +74,7 @@ export function Navigation() {
       ${isScrolled ? 'scale-90' : 'scale-100'}`}
           >
             <img
-              src="/images/uklogo.svg"
+              src="images/uklogo.svg"
               alt="UK"
               className="w-12 h-12 object-contain"
             />
