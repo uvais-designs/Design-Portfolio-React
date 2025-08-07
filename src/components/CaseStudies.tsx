@@ -30,16 +30,6 @@ function FeaturedCaseStudyCard({
     <div className="group cursor-pointer mb-10">
       <div className="glass-card rounded-3xl overflow-hidden hover:scale-[1.02] transition-all duration-500 hover:shadow-2xl relative">
 
-        {/* Floating badge */}
-        <div className="absolute -top-4 left-6 z-20">
-          <div className="glass-button px-3 py-1.5 rounded-full">
-            <span className="text-sm font-medium text-primary flex items-center gap-2">
-              <div className="w-2 h-2 bg-primary rounded-full animate-pulse"></div>
-              Current Project
-            </span>
-          </div>
-        </div>
-
         {/* Layout */}
         <div className="grid grid-rows-[auto_1fr]">
           {/* Image Section */}

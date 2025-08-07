@@ -9,6 +9,8 @@ import { CaseStudies } from "./components/CaseStudies";
 import { Leadership } from "./components/Leadership";
 import { Contact } from "./components/Contact";
 import { WhyDesign } from "./components/WhyDesign";
+import ProfileCard from './components/ProfileCard'
+
 
 export default function App() {
   const [isLoading, setIsLoading] = useState(true);
@@ -45,7 +47,7 @@ export default function App() {
         <div className="absolute top-40 right-20 w-24 h-24 bg-gradient-to-br from-green-500/10 to-transparent rounded-full blur-xl animate-float" style={{ animationDelay: '2s' }}></div>
         <div className="absolute bottom-32 left-1/4 w-40 h-40 bg-gradient-to-br from-purple-500/10 to-transparent morphing-blob blur-xl"></div>
         <div className="absolute bottom-20 right-1/3 w-28 h-28 bg-gradient-to-br from-pink-500/10 to-transparent rounded-full blur-xl animate-float" style={{ animationDelay: '4s' }}></div>
-        
+
         {/* Grid pattern overlay */}
         <div className="absolute inset-0 bg-[linear-gradient(rgba(37,99,235,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(37,99,235,0.03)_1px,transparent_1px)] bg-[size:50px_50px] [mask-image:radial-gradient(ellipse_80%_50%_at_50%_0%,#000_70%,transparent_110%)]"></div>
       </div>
@@ -54,22 +56,41 @@ export default function App() {
       {isLoading && <Loader onComplete={handleLoadingComplete} />}
 
       {/* Main content */}
-      <div className={`transition-all duration-1000 ${
-        showContent ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
-      }`}>
+      <div className={`transition-all duration-1000 ${showContent ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
+        }`}>
         {!isLoading && (
           <>
             <Navigation />
             <main className="relative z-10">
+
+              <ProfileCard
+                name="Uvaisul Karni"
+                title="UXD"
+                handle="uvais"
+                status="Online"
+                contactText="Contact Me"
+                avatarUrl="images/uvaisul.png"
+                showUserInfo={true}
+                enableTilt={true}
+                enableMobileTilt={true}
+                onContactClick={() => {
+                  const contactSection = document.querySelector('#contact');
+                  if (contactSection) {
+                    contactSection.scrollIntoView({ behavior: 'smooth' });
+                  }
+                }}
+              />
               <Hero />
               <CaseStudies />
               <Experience />
               <Education />
               <Leadership />
               <WhyDesign />
-              <Contact />
+              <div id="contact">
+                <Contact />
+              </div>
             </main>
-            
+
             {/* Scroll to top button */}
             <ScrollToTopButton />
           </>
@@ -104,9 +125,8 @@ function ScrollToTopButton() {
 
   return (
     <button
-      className={`fixed bottom-8 right-8 z-50 glass-button p-3 rounded-full transition-all duration-300 ${
-        isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
-      }`}
+      className={`fixed bottom-8 right-8 z-50 glass-button p-3 rounded-full transition-all duration-300 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+        }`}
       onClick={scrollToTop}
       aria-label="Scroll to top"
     >

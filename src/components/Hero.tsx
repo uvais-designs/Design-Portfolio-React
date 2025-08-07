@@ -27,16 +27,8 @@ export function Hero() {
 
       <div className="container mx-auto px-4 text-center relative z-10">
         <div className="max-w-4xl mx-auto space-y-8">
-          {/* Personal greeting */}
           <div className="space-y-6">
-            <h1 className="heading-display gradient-text opacity-0 animate-fade-in-up" style={{ animationDelay: '0.4s', animationFillMode: 'forwards' }}>
-              Uvaisul Karni Sheik
-            </h1>
-
             <div className="space-y-4 opacity-0 animate-fade-in-up" style={{ animationDelay: '0.6s', animationFillMode: 'forwards' }}>
-              <h2 className="text-2xl md:text-3xl text-foreground/90 font-bold">
-                User eXperience Designer
-              </h2>
               <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed">
                 Crafting meaningful digital experiences that bridge user needs with business goals.
                 Passionate about design systems, team leadership, and creating products that make a difference.
@@ -57,7 +49,7 @@ export function Hero() {
                   <div className="text-2xl md:text-3xl font-bold text-primary group-hover:scale-110 transition-transform duration-300">
                     {stat.number}
                   </div>
-                  <div className="text-sm text-muted-foreground font-semibold text-blue-900 group-hover:text-primary transition-colors duration-300 ">
+                  <div className="text-sm text-muted-foreground font-semibold text-blue-500 group-hover:text-primary transition-colors duration-300 ">
                     {stat.label}
                   </div>
                 </div>

@@ -4,19 +4,16 @@ export function Education() {
       institution: "DSEC - Dhanalakshmi Srinivasan Engineering College",
       degree: "B.E. Computer Science & Engineering",
       duration: "June 2016 – March 2020 · Perambalur, Tamil Nadu",
-      percentage: "66%",
     },
     {
       institution: "V.E.T Higher Secondary School, VDM",
       degree: "Higher Secondary (HSC)",
       duration: "June 2014 – April 2016 · Virudhachalam, Tamil Nadu",
-      percentage: "73%",
     },
     {
       institution: "Fatima Matriculation Higher Secondary School, VDM",
       degree: "SSLC",
       duration: "June 2013 – April 2014 · Virudhachalam, Tamil Nadu",
-      percentage: "91%",
     },
   ];
 
@@ -41,7 +38,6 @@ export function Education() {
             <div className="text-primary font-medium mb-2">{edu.degree}</div>
             <div className="text-muted-foreground mb-1">{edu.duration}</div>
             <div className="text-sm text-foreground font-bold">
-              Scored: <span className="text-green-600">{edu.percentage}</span>
             </div>
           </div>
         ))}

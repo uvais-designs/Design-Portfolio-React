@@ -70,7 +70,7 @@ export function Navigation() {
         <a href="#home" className="w-16 h-12 flex items-center">
           <div
             className={`w-8 h-8 rounded-lg bg-gradient-to-br from-primary/20 to-accent/20 backdrop-blur-xl 
-      border border-white/20 flex items-center justify-center transition-all duration-300 
+       flex items-center justify-center transition-all duration-300 
       ${isScrolled ? 'scale-90' : 'scale-100'}`}
           >
             <img

@@ -65,7 +65,7 @@ export function Loader({ onComplete }: LoaderProps) {
                     <img
                       src="images/uklogo.svg"
                       alt="UK"
-                      className="w-24 h-24 object-contain"
+                      className="w-24 h-24"
                     /></div>
                 </div>
               </div>
@@ -85,7 +85,7 @@ export function Loader({ onComplete }: LoaderProps) {
           <div className={`transition-all duration-500 ${phase === 'complete' ? 'opacity-0 translate-y-4' : 'opacity-100 translate-y-0'
             }`}>
             {/* Liquid glass progress container */}
-            <div className="w-80 mx-auto p-6 rounded-2xl bg-white/10 dark:bg-black/10 backdrop-blur-xl border border-white/20 shadow-xl">
+            <div className="w-80 mx-auto p-6 rounded-2xl bg-white/10 dark:bg-black/10 backdrop-blur-xl shadow-xl">
               <div className="space-y-4">
                 {/* Progress bar */}
                 <div className="relative h-2 bg-white/20 rounded-full overflow-hidden">
